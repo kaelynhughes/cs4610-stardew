@@ -1,0 +1,15 @@
+{
+  "name": "Stardew Valley Cooking Checklist",
+  "short_name": "Cooking Checklist",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "A checklist to track recipes and ingredients needed in Stardew Valley.",
+  "icons": [
+    {
+      "src": "/client/public/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}
