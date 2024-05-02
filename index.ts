@@ -5,7 +5,6 @@ import fs from "fs";
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import { PrismaClient } from "@prisma/client";
-// import { createServer } from "node:http";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import { buildUsersController } from "./server/controllers/users_controller";
@@ -27,11 +26,8 @@ export const MANIFEST: Record<string, any> = DEBUG
   : JSON.parse(fs.readFileSync("static/.vite/manifest.json").toString());
 
 const app = express();
-const httpServer = createServer(app); // Create HTTP server
-const io = new Server(httpServer); // Attach socket.io to the HTTP server
-
-// const server = createServer(app);
-// const io = new Server(server);
+const httpServer = createServer(app);
+const io = new Server(httpServer);
 
 let connections = 0;
 
@@ -83,10 +79,6 @@ app.use("/", buildHomeController());
 app.use("/users", buildUsersController(usersRepository));
 app.use("/sessions", buildSessionsController(db));
 app.use("/recipes", buildRecipesController(recipesRepository));
-
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log(`Listening on port ${process.env.PORT || 3000}...`);
-// });
 
 httpServer.listen(3000, () => {
   console.log("Listening on port 3000...");
