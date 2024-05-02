@@ -9,7 +9,6 @@ import {
 import { requireLogin } from "./utils/require_login";
 import { useEffect, useState } from "react";
 import { useApi } from "./utils/use_api";
-import { RecipeTable } from "./RecipeTable";
 import { IngredientTable } from "./IngredientTable";
 
 export const Ingredients = () => {
@@ -31,6 +30,10 @@ export const Ingredients = () => {
     setIngredients(ingredients);
   }
 
+  async function testWorker() {
+    console.log("hello");
+  }
+
   useEffect(() => {
     getUser();
     getIngredients();
@@ -42,7 +45,6 @@ export const Ingredients = () => {
         <CardHeader
           title="Ingredients"
           titleTypographyProps={{ variant: "h4" }}
-          subheader={`You have cooked!`}
           subheaderTypographyProps={{
             variant: "subtitle1",
           }}

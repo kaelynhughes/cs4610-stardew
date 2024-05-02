@@ -5,7 +5,7 @@ import "./index.css";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { Provider, useSelector } from "react-redux";
 import store from "./store/store";
-import { Home } from "./Home.jsx";
+import { Chat } from "./Chat.jsx";
 import { Login } from "./Login.jsx";
 import { SignUp } from "./SignUp.jsx";
 import { Api, ApiContext } from "./utils/api.js";
@@ -18,8 +18,8 @@ const router = createHashRouter([
     element: <App />,
     children: [
       {
-        path: "",
-        element: <Home />,
+        path: "/chat",
+        element: <Chat />,
       },
       {
         path: "/ingredients",

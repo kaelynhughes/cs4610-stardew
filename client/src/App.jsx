@@ -37,6 +37,10 @@ function App() {
     dispatch(setAuthToken(null));
   }
 
+  function toChat() {
+    navigate("/chat");
+  }
+
   function toIngredients() {
     navigate("/ingredients");
   }
@@ -98,6 +102,13 @@ function App() {
                   ) : (
                     <>
                       <Button
+                        key={"Recipes"}
+                        onClick={toRecipes}
+                        sx={{ my: 2, color: "white", display: "block" }}
+                      >
+                        Recipes
+                      </Button>
+                      <Button
                         key={"Ingredients"}
                         onClick={toIngredients}
                         sx={{ my: 2, color: "white", display: "block" }}
@@ -105,11 +116,11 @@ function App() {
                         Ingredients
                       </Button>
                       <Button
-                        key={"Recipes"}
-                        onClick={toRecipes}
+                        key={"Chat"}
+                        onClick={toChat}
                         sx={{ my: 2, color: "white", display: "block" }}
                       >
-                        Recipes
+                        Chat
                       </Button>
                       <Button
                         key={"Logout"}

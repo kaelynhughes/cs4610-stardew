@@ -61,7 +61,7 @@ const ingredients: Ingredient[] = [
     id: 9,
     name: "Milk",
     description: "A jug of cow's milk.",
-    totalQuantity: 1,
+    totalQuantity: 2,
   },
   {
     id: 10,
