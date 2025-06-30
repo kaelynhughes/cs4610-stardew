@@ -6,7 +6,6 @@ import {
   Box,
   Button,
   CssBaseline,
-  TextField,
   Toolbar,
   Typography,
   createTheme,
@@ -16,11 +15,6 @@ import { useEffect, useState } from "react";
 
 function App() {
   const authToken = useSelector((state) => state.application.authToken);
-
-  // const worker = new Worker(new URL("./worker.js", import.meta.url));
-
-  const [name, setName] = useState("");
-  const [message, setMessage] = useState(null);
 
   const theme = createTheme({
     palette: {
